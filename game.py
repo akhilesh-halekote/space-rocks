@@ -1,4 +1,4 @@
-# space_rocks/game.py
+# asteroid_shooter/game.py
 import pygame
 from models import Rock, Spaceship
 from utils import load_sprite, print_text, print_sub_text, load_sound, print_score
@@ -8,7 +8,7 @@ rocks = []
 high_score = 0
 
 
-class SpaceRocks:
+class Asteroids:
     """This class represents the game Space Rocks. It is responsible for handling the game loop, input,
     game logic, and drawing objects on the screen."""
     def __init__(self, mode=pygame.display.set_mode((800, 600))):

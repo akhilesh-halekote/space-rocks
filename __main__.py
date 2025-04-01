@@ -1,6 +1,6 @@
-from game import SpaceRocks
+from game import Asteroids
 
 if __name__ == "__main__":
-    space_rocks = SpaceRocks()
-    space_rocks.main_loop()
+    asteroids = Asteroids()
+    asteroids.main_loop()
 

@@ -1,4 +1,4 @@
-# space_rocks/utils.py
+# asteroid_shooter/utils.py
 from unittest.mock import Mock
 
 from pygame import Color

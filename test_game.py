@@ -2,7 +2,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import pygame
-from game import SpaceRocks
+from game import Asteroids
 from models import Spaceship
 
 
@@ -17,7 +17,7 @@ class TestSpaceRocks(unittest.TestCase):
         mock_load_sound.return_value = MagicMock()
         mock_font.return_value = MagicMock()
         mock_set_mode.return_value = MagicMock()
-        self.game = SpaceRocks(mock_mode)
+        self.game = Asteroids(mock_mode)
 
     def test_initialization(self):
         self.assertIsNotNone(self.game.screen)
