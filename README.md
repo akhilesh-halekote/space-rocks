@@ -12,5 +12,6 @@ python3 main.py
 4. Press 'r' to restart the game
 5. Press 'q' to quit the game
 
-## Game Screenshots
+## Demo
+![SpaceRocks](https://github.com/user-attachments/assets/02f486f8-b4ed-4b3d-af02-25a9c257828f)
 
