@@ -1,5 +1,6 @@
 # Asteroid Shooter
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/your-repo)
+
 This is a game developed using pygame. User has to shoot down all asteroids which comes close to the spaceship
 If you successfully hit down all the asteroids then you will win the game. If any asteroid hit spaceship, the user will lose the game.
 
