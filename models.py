@@ -6,7 +6,9 @@ from utils import load_sprite, load_sound, wrap_position
 
 DIRECTION_UP = Vector2(0, -1)
 
+
 class GameObject:
+
     def __init__(self, position, sprite, velocity, wraps=True):
         self.position = Vector2(position)
         self.sprite = sprite
@@ -30,10 +32,12 @@ class GameObject:
         distance = self.position.distance_to(other.position)
         return distance < self.radius + other.radius
 
+
 class Spaceship(GameObject):
     ROTATION_SPEED = 3
     ACCELERATION = 0.25
     BULLET_SPEED = 3
+    TOP_SPEED = 3
 
     def __init__(self, position):
         self.direction = Vector2(DIRECTION_UP)
@@ -46,7 +50,16 @@ class Spaceship(GameObject):
         self.direction.rotate_ip(angle)
 
     def accelerate(self):
-        self.velocity += self.direction * self.ACCELERATION
+        if self.velocity.length() < self.TOP_SPEED:
+            self.velocity += self.direction * self.ACCELERATION
+        else:
+            print("Top speed reached")
+
+    def decelerate(self):
+        if self.velocity.length() > 0:
+            self.velocity -= self.direction * self.ACCELERATION
+        else:
+            print("Stopped")
 
     def shoot(self):
         velocity = self.direction * self.BULLET_SPEED + self.velocity
@@ -65,6 +78,7 @@ class Spaceship(GameObject):
 
         blit_position = self.position - rotated_surface_size * 0.5
         surface.blit(rotated_surface, blit_position)
+
 
 class Rock(GameObject):
     MIN_START_GAP = 250
@@ -109,6 +123,7 @@ class Rock(GameObject):
 
             rocks.append(Rock(self.position, self.size - 1))
             rocks.append(Rock(self.position, self.size - 1))
+
 
 class Bullet(GameObject):
     def __init__(self, position, velocity):
